@@ -1,0 +1,147 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  width: 420px;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+input {
+  flex: 1;
+}
+
+select {
+  background: #fff;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  background: #667eea;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5640d8;
+  transform: scale(1.05);
+}
+
+/* Filter Buttons */
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.filter-section button {
+  flex: 1;
+  margin: 0 4px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.filter-section button:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.9);
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease;
+  transform: translateX(-10px);
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+li.completed {
+  text-decoration: line-through;
+  background: #c3f0ca;
+  color: gray;
+  transform: scale(0.98);
+}
+
+.priority-high { border-left: 5px solid red; }
+.priority-medium { border-left: 5px solid orange; }
+.priority-low { border-left: 5px solid green; }
+
+.actions button {
+  margin-left: 5px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.edit-btn { background: #ff9800; color: #fff; }
+.delete-btn { background: red; color: #fff; }
